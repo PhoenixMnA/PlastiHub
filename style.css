@@ -1,0 +1,647 @@
+/* Custom Typography Fallbacks */
+@font-face {
+  font-family: 'Kirgina';
+  src: local('Kirgina'), local('Gondens Demo'), url('https://fonts.cdnfonts.com/css/kirgina') format('woff2');
+  font-display: swap;
+}
+
+:root {
+  --bg-color: #C0EBFF;        /* Ice Effect */
+  --dark-blue: #002B4C;       /* Dark Ocean Blue */
+  --accent-orange: #F59E71;   /* Summer Orange */
+  --glass-bg: rgba(0, 43, 76, 0.25);
+  --glass-border: rgba(255, 255, 255, 0.4);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Kirgina', 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+  color: var(--dark-blue);
+  min-height: 100vh;
+  padding-bottom: 50px;
+}
+
+/* Glassmorphism Header */
+.glass-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 1px solid var(--glass-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo h1 {
+  color: var(--dark-blue);
+  font-size: 1.8rem;
+}
+
+.logo span {
+  color: var(--accent-orange);
+}
+
+.tab-menu {
+  display: flex;
+  gap: 10px;
+}
+
+.tab-btn {
+  background: transparent;
+  border: 2px solid var(--dark-blue);
+  color: var(--dark-blue);
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.tab-btn.active, .tab-btn:hover {
+  background: var(--dark-blue);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Container & Glass Cards */
+.container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 32px 0 rgba(0, 43, 76, 0.15);
+}
+
+/* Tab Switching Animations */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.animated-fade {
+  animation: fadeInScale 0.4s ease-out forwards;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Pulsing Action Buttons */
+.pulse-btn {
+  background: var(--accent-orange);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(245, 158, 113, 0.4);
+  display: inline-block;
+  text-decoration: none;
+}
+
+.pulse-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(245, 158, 113, 0.6);
+}
+
+/* Accordion Styles */
+.accordion-header {
+  width: 100%;
+  background: transparent;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--dark-blue);
+  cursor: pointer;
+}
+
+.accordion-body {
+  display: none;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(0, 43, 76, 0.2);
+  line-height: 1.6;
+}
+
+.accordion-body.open {
+  display: block;
+  animation: fadeInScale 0.3s ease-out;
+}
+
+/* Inputs & Calc */
+.calc-inputs {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.calc-inputs input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--dark-blue);
+  outline: none;
+  width: 45%;
+}
+
+.result-box {
+  margin-top: 10px;
+  font-weight: bold;
+  color: var(--dark-blue);
+}
+
+/* ==========================================
+   HERO SHOWCASE BANNER STYLES
+   ========================================== */
+.hero-showcase-card {
+  text-align: center;
+  padding: 24px;
+}
+
+.hero-showcase-img-container {
+  overflow: hidden;
+  border-radius: 14px;
+  margin-bottom: 18px;
+}
+
+.hero-showcase-img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hero-showcase-img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(245, 158, 113, 0.4);
+}
+
+.highlights-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.badge {
+  background: rgba(255, 255, 255, 0.35);
+  border: 1.5px solid var(--accent-orange);
+  color: var(--dark-blue);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+/* ==========================================
+   MANUAL IMAGES HOVER & ZOOM POLISH
+   ========================================== */
+img.manual-image {
+  display: block;
+  margin: 18px auto 0 auto;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  box-shadow: 0 4px 14px rgba(0, 43, 76, 0.2);
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), 
+              box-shadow 0.35s ease, 
+              border-color 0.35s ease;
+}
+
+/* Orange Glassmorphism Glow on Hover */
+img.manual-image:hover {
+  transform: scale(1.04);
+  border-color: var(--accent-orange);
+  box-shadow: 0 8px 25px rgba(245, 158, 113, 0.5), 
+              0 0 15px rgba(245, 158, 113, 0.3);
+  cursor: pointer;
+}
+
+body {
+  background-image: url('images/back.png');
+  background-size: cover;       /* Stretches the image to cover the whole screen */
+  background-position: center;  /* Centers the image neatly */
+  background-repeat: no-repeat; /* Prevents the image from tiling */
+  background-attachment: fixed; /* Keeps the background stationary while scrolling */
+}
+
+/* ==========================================
+   MIDNIGHT DARK GLASS + CONTRAST GLOW (COMBO 2 & 3)
+   ========================================== */
+
+/* Darkened Glass Card Base */
+.glass-card {
+  background: rgba(0, 30, 55, 0.82);   /* Deep midnight blue overlay */
+  backdrop-filter: blur(22px);           /* Strong blur to smooth out background chaos */
+  -webkit-backdrop-filter: blur(22px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  color: #FFFFFF;                        /* Primary body text to pure white */
+}
+
+/* Ultra-Readable Headings with Soft Drop Shadow */
+.glass-card h1, 
+.glass-card h2, 
+.glass-card h3, 
+.glass-card h4 {
+  color: #FFFFFF;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* Paragraphs & List Items with Subtle Contrast Shadow */
+.glass-card p, 
+.glass-card ol, 
+.glass-card ul, 
+.glass-card li {
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* Accordion Header Text Fix for Dark Glass */
+.accordion-header {
+  color: #FFFFFF;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.accordion-body {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Glowing Highlight Badges for Dark Mode */
+.badge {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1.5px solid var(--accent-orange);
+  color: #FFFFFF;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 10px rgba(245, 158, 113, 0.3);
+}
+
+/* Calculator Inputs Pop Fix */
+.calc-inputs input {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--dark-blue);
+  font-weight: 600;
+  border: 1px solid var(--accent-orange);
+}
+
+/* ==========================================
+   OPTION 3: ANIMATED NEON-GLOW FOCUS BOXES ⚡
+   ========================================== */
+.calc-inputs input {
+  background: rgba(0, 20, 40, 0.65);         /* Dark frosted interior */
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  color: #FFFFFF;                            /* High-contrast white text */
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 12px 16px;
+  outline: none;
+  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Crisp, readable placeholders */
+.calc-inputs input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* Hover State: Subtle Ambient Edge */
+.calc-inputs input:hover {
+  border-color: rgba(245, 158, 113, 0.6);
+  box-shadow: 0 0 12px rgba(245, 158, 113, 0.3);
+  cursor: pointer;
+}
+
+/* Active Focus State: Full Animated Neon Orange Pulse! */
+.calc-inputs input:focus {
+  background: rgba(0, 20, 40, 0.85);
+  border-color: var(--accent-orange);
+  box-shadow: 0 0 22px rgba(245, 158, 113, 0.65), 
+              0 0 6px rgba(245, 158, 113, 0.8);
+  transform: translateY(-2px);              /* Subtle lift effect */
+}
+
+.result-box {
+  margin-top: 15px;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 12px;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Embedded Shop Form Styling */
+.momo-instructions {
+  background: rgba(245, 158, 113, 0.2);
+  border: 1px solid var(--accent-orange);
+  padding: 15px;
+  border-radius: 12px;
+  margin: 15px 0 25px 0;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.momo-instructions strong {
+  color: var(--dark-blue);
+}
+
+.form-container {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: inset 0 0 15px rgba(0, 43, 76, 0.1);
+}
+
+.glass-iframe {
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ==========================================
+   MOBILE STICKY APP DOCK (Option 3)
+   ========================================== */
+@media (max-width: 768px) {
+  /* Give space at bottom of page so dock doesn't cover content */
+  body {
+    padding-bottom: 80px;
+  }
+
+  /* Clear the header so your title has room to breathe */
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 10px;
+  }
+
+  /* Move Navigation to Sticky Bottom Dock */
+  nav {
+    position: fixed;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 400px;
+    z-index: 9999;
+    
+    /* Glassmorphic Dock Container */
+    background: rgba(0, 43, 76, 0.85); /* Dark Ocean Blue glass */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    padding: 8px 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  /* Compact Dock Buttons */
+  nav button, nav a {
+    font-size: 0.75rem !important;
+    padding: 8px 12px !important;
+    border-radius: 18px !important;
+    white-space: nowrap;
+    margin: 0 2px;
+    flex: 1;
+    text-align: center;
+  }
+  .glass-nav {
+    position: relative !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(0, 43, 76, 0.6) !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+}
+
+/* ==========================================
+   FLOATING ACTION BUTTON (FAB) & GLASS DRAWER
+   ========================================== */
+
+/* Hide FAB on desktop screens */
+.fab-container {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* Center Header Logo & Hide Desktop Navigation Bar */
+  .glass-nav {
+    justify-content: center !important;
+    padding: 15px 10px !important;
+  }
+  .glass-nav .tab-menu {
+    display: none !important;
+  }
+
+  /* Show Floating Action Container */
+  .fab-container {
+    display: flex;
+    position: fixed;
+    bottom: 25px;
+    right: 20px;
+    z-index: 10000;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  /* Circular Floating Action Button */
+  .fab-trigger {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: var(--dark-blue);
+    border: 2px solid var(--accent-orange);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(245, 158, 113, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .fab-trigger:active {
+    transform: scale(0.9);
+  }
+
+  /* Hamburger Lines */
+  .hamburger-line {
+    width: 22px;
+    height: 2.5px;
+    background-color: #FFFFFF;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Smooth Morphing Transition to 'X' */
+  .fab-trigger.active .hamburger-line:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
+    background-color: var(--accent-orange);
+  }
+  .fab-trigger.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+  .fab-trigger.active .hamburger-line:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg);
+    background-color: var(--accent-orange);
+  }
+
+  /* Floating Glass Menu Card */
+  .fab-menu-card {
+    position: absolute;
+    bottom: 72px;
+    right: 0;
+    width: 220px;
+    background: rgba(0, 30, 55, 0.94);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    padding: 14px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+    
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    /* Elastic Pop-up Entrance Animation */
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.7) translateY(20px);
+    transform-origin: bottom right;
+    transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  /* Active Open State */
+  .fab-menu-card.open {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1) translateY(0);
+  }
+
+  /* High-Contrast Stacked Buttons with Orange Glow */
+  .fab-menu-card .tab-btn {
+    width: 100%;
+    text-align: center;
+    padding: 12px 14px;
+    font-size: 0.88rem;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #FFFFFF;
+    border: 1.5px solid var(--accent-orange);
+    box-shadow: 0 0 10px rgba(245, 158, 113, 0.3);
+    transition: all 0.25s ease;
+  }
+
+  .fab-menu-card .tab-btn.active,
+  .fab-menu-card .tab-btn:hover {
+    background: var(--accent-orange);
+    color: #FFFFFF;
+    box-shadow: 0 0 18px rgba(245, 158, 113, 0.7);
+    transform: translateY(-2px);
+  }
+}
+/* ==========================================
+   MICRO-ANIMATION TRIPLE-THREAT UPGRADES
+   ========================================== */
+
+/* 1. Ambient Pulse Animation Keyframes */
+@keyframes fabPulse {
+  0% {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 0 0 rgba(245, 158, 113, 0.7);
+  }
+  70% {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 0 14px rgba(245, 158, 113, 0);
+  }
+  100% {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 0 0 rgba(245, 158, 113, 0);
+  }
+}
+
+@media (max-width: 768px) {
+  /* Apply Continuous Pulse to Idle FAB Button */
+  .fab-trigger {
+    animation: fabPulse 2.2s infinite;
+  }
+
+  /* Pause pulse ring when menu is open so focus stays on menu */
+  .fab-trigger.active {
+    animation: none;
+  }
+
+  /* 2. Staggered Button Cascade Base */
+  .fab-menu-card .tab-btn {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.25s ease, transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  /* Staggered Delay Delights When Card Opens */
+  .fab-menu-card.open .tab-btn {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .fab-menu-card.open .tab-btn:nth-child(1) { transition-delay: 0.08s; }
+  .fab-menu-card.open .tab-btn:nth-child(2) { transition-delay: 0.15s; }
+  .fab-menu-card.open .tab-btn:nth-child(3) { transition-delay: 0.22s; }
+}

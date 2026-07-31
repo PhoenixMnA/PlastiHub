@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlastiCraft Hub | Upcycled Student Essentials</title>
+ <link rel="icon" type="image/png" href="./images/backclear.png">
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts Fallback & Custom Font Call -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Glassmorphism Header & Navigation -->
+  <header class="glass-nav">
+    <div class="logo">
+      <h1>PlastiCraft <span>Hub</span></h1>
+    </div>
+    <nav class="tab-menu">
+      <button class="tab-btn active" onclick="switchTab('learn')">🌍 Learn & Impact</button>
+      <button class="tab-btn" onclick="switchTab('guides')">🛠️ DIY Manuals</button>
+      <button class="tab-btn" onclick="switchTab('shop')">🛒 Shop</button>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <!-- TAB 1: LEARN & IMPACT -->
+    <section id="learn" class="tab-content active animated-fade">
+      
+      <!-- HERO SHOWCASE BANNER -->
+      <div class="hero-showcase-card glass-card">
+        <div class="hero-showcase-img-container">
+          <img src="images/backgrd.png" alt="PlastiCraft Hub Eco-Kit Showcase" class="hero-showcase-img">
+        </div>
+        <div class="hero-showcase-content">
+          <h2>The PlastiCraft Eco-Kit ⚡</h2>
+          <p>Upcycled Student Essentials Designed for Modern Campus Life</p>
+          <div class="highlights-grid">
+            <span class="badge">♻️ 100% Upcycled Plastic</span>
+            <span class="badge">💧 Waterproof Plastic Leather</span>
+            <span class="badge">🔒 Cam-Lock Cable Tech</span>
+            <span class="badge">🎓 Tested</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card glass-card">
+        <h2>Transforming Local Waste into Value ♻️</h2>
+        <p>PlastiCraft Hub empowers students to turn everyday plastic waste—like water sachets, bottle caps, and soda bottles—into sleek, high-utility study gear.</p>
+      </div>
+
+      <div class="calculator-card glass-card">
+        <h3> Plastic Impact Calculator</h3>
+        <p>Type in how many plastic items you've recycled today to see your positive environmental footprint:</p>
+        <div class="calc-inputs">
+          <input type="number" id="sachetInput" placeholder="Sachet Bags" min="0">
+          <input type="number" id="bottleInput" placeholder="Plastic Bottles" min="0">
+          <button class="pulse-btn" onclick="calculateImpact()">Calculate Impact</button>
+        </div>
+        <div id="calcResult" class="result-box"></div>
+      </div>
+    </section>
+
+    <!-- TAB 2: DIY MANUALS (ACCORDION STYLE) -->
+    <section id="guides" class="tab-content animated-fade">
+      <h2 class="section-title">Interactive Step-by-Step Manuals</h2>
+      <p class="subtitle">Scan the QR code on your product or select a project below to learn how to craft your own!</p>
+
+      <!-- Accordion Item 1 -->
+      <div class="accordion-item glass-card">
+        <button class="accordion-header" onclick="toggleAccordion('acc1')">
+          <span>Fused Sachet Desk Organizer</span>
+          <span class="arrow" id="arrow-acc1">▼</span>
+        </button>
+        <div id="acc1" class="accordion-body">
+          <h4>Tools & Materials Needed:</h4>
+          <p>12–16 clean water sachets, 2 sheets parchment paper, household iron, scissors/utility knife, ruler & marker, contact adhesive or needle/thread.</p>
+          <h4>Step-by-Step Construction Process:</h4>
+          <ol>
+            <li><strong>Prep & Sanitize:</strong> Cut open seals of sachets, slice down one side to lay flat, wash thoroughly with soap/water, and dry completely.</li>
+            <li><strong>Layer the Stack:</strong> Place 1 sheet of parchment paper down, stack 6–8 sachet layers (alternating print directions for abstract patterns), and cover with 2nd parchment sheet.</li>
+            <li><strong>Thermal Fusion:</strong> Iron on medium/wool heat in slow circular motions for 10–15 seconds per side. Let cool 30 seconds and peel paper away to reveal waterproof plastic leather.</li>
+            <li><strong>Measure & Cut:</strong> Trim sheet to a 20cm x 15cm rectangle. Measure 3cm inward on all sides for wall fold lines, and cut 3cm slits at each corner.</li>
+            <li><strong>Fold, Bond & Compartments:</strong> Fold walls upward and glue or stitch overlapping corner tabs. <em>Optional:</em> Glue a 15cm x 3cm fused plastic strip across center as a divider wall.</li>
+          </ol>
+          <img src="images/organizer.png" alt="Fused Sachet Desk Organizer" class="manual-image">
+        </div>
+      </div>
+
+      <!-- Accordion Item 2 -->
+      <div class="accordion-item glass-card">
+        <button class="accordion-header" onclick="toggleAccordion('acc2')">
+          <span>"Cap-Tidy" Cam-Twist Cable Manager</span>
+          <span class="arrow" id="arrow-acc2">▼</span>
+        </button>
+        <div id="acc2" class="accordion-body">
+          <h4>Tools & Materials Needed:</h4>
+          <p>1 plastic bottle neck + matching cap, utility knife/blade, sandpaper/file, mounting baseboard (wood/fused sachet board), contact adhesive.</p>
+          <h4>Step-by-Step Construction Process:</h4>
+          <ol>
+            <li><strong>Carve the Saddle Base:</strong> Cut bottle neck off. Carve two opposing downward U-shaped notches across the top rim where charging cord rests.</li>
+            <li><strong>Modify the Cam Collar:</strong> Cut top face out of cap to form a ring, remove a small section for an open arc, and keep an inward U-shaped pocket on inner rim.</li>
+            <li><strong>Mount Assembly:</strong> Glue bottom flange of bottle neck flat onto baseboard.</li>
+            <li><strong>Locking Mechanism:</strong> Lay cord horizontally across neck saddle notches, thread modified cap ring on, and screw down—the inward U-pocket rotates and clamps cord perpendicularly against neck!</li>
+            <li><strong>Pro Upgrades:</strong> Mount 3 bottle necks side-by-side for a Multi-Cord Rail or glue a recycled magnet to base bottom for metal desk-leg snapping!</li>
+          </ol>
+          <img src="images/cable.png" alt="Cap-Tidy Cam-Twist Cable Manager" class="manual-image">
+        </div>
+      </div>
+
+      <!-- Accordion Item 3 -->
+      <div class="accordion-item glass-card">
+        <button class="accordion-header" onclick="toggleAccordion('acc3')">
+          <span>Multi-Tier Coke Bottle Eco-Caddy</span>
+          <span class="arrow" id="arrow-acc3">▼</span>
+        </button>
+        <div id="acc3" class="accordion-body">
+          <h4>Tools & Materials Needed:</h4>
+          <p>3 plastic Coke bottles, utility knife/scissors, spray paint & bowl of water (for dipping), iron/sandpaper, contact adhesive, ruler/marker, baseboard.</p>
+          <h4>Step-by-Step Construction Process:</h4>
+          <ol>
+            <li><strong>Measure & Cut Tiers:</strong> Wash and dry 3 bottles. Mark circumference lines at staggered heights: 12cm (rulers/scissors), 8cm (pens), and 5cm (erasers). Cut bottom halves.</li>
+            <li><strong>Hydro Dip Custom Finish:</strong> Spray two colors into a bowl of water, swirl the pattern, gently dip each cut bottle half into the swirl, and let dry completely.</li>
+            <li><strong>Smooth Cut Rims:</strong> Press cut edges against a warm iron for 1–2 seconds to curl edges into a smooth rounded lip (or sand smooth).</li>
+            <li><strong>Bond Cascading Structure:</strong> Glue bottle sides together in a descending line or triangle. Glue cluster base onto baseboard and trim excess.</li>
+            <li><strong>Finish Touch:</strong> Wrap exterior with a fused sachet sleeve or pour 1cm of sand/caps into bottom cups for weighted stability.</li>
+          </ol>
+          <img src="images/bottle.png" alt="Multi-Tier Coke Bottle Eco-Caddy" class="manual-image">
+        </div>
+      </div>
+    </section>
+
+   <!-- TAB 3: STUDENT SHOP & ORDER -->
+<section id="shop" class="tab-content animated-fade">
+  <h2 class="section-title">Order Ready-Made Student Eco-Set</h2>
+
+  <div class="glass-card shop-order-card">
+    <h3>🛒 Complete Your Order</h3>
+    
+    <!-- MoMo Payment Banner -->
+    <div class="momo-instructions">
+      <p>Step 1: Send GHS 45.00 via Mobile Money to020-895-2307 (Account Name: PlastiCraft Hub).</p>
+      <p>Step 2: Fill out your details below and paste your10-Digit MoMo Transaction Reference ID to confirm!</p>
+    </div>
+
+    <!-- Embedded Google Form -->
+    <div class="form-container">
+      <iframe 
+        src="https://docs.google.com/forms/d/e/1FAIpQLSfAceNScwgU5eAid095puIpYUytoMkRWzkUw-efAlosxFi_Ew/viewform?embedded=true" 
+        width="100%" 
+        height="750" 
+        frameborder="0" 
+        marginheight="0" 
+        marginwidth="0"
+        class="glass-iframe">
+        Loading order form…
+      </iframe>
+    </div>
+  </div>
+</section>
+
+  </main>
+</main>
+
+  <!-- FLOATING ACTION BUTTON & GLASS DRAWER (MOBILE) -->
+  <div class="fab-container">
+    <!-- Floating Glass Card -->
+    <div id="fabMenuCard" class="fab-menu-card">
+      <button class="tab-btn active" onclick="switchTab('learn'); toggleFabMenu();">🌍 Learn & Impact</button>
+      <button class="tab-btn" onclick="switchTab('guides'); toggleFabMenu();">🛠️ DIY Manuals</button>
+      <button class="tab-btn" onclick="switchTab('shop'); toggleFabMenu();">🛒 Shop</button>
+    </div>
+
+    <!-- Floating Circular Button -->
+    <button id="fabBtn" class="fab-trigger" onclick="toggleFabMenu()" aria-label="Toggle Menu">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+  <script src="app.js"></script>
+</body>
+</html>
